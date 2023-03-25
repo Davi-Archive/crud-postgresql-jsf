@@ -8,9 +8,16 @@
 </h:head>
 <h:body>
 	<h:form id="formPessoa">
-		<h:inputText id="campoNome" value="#{pessoaBean.nome}"/><br />
-		<h:outputText value="Teste jsf" />
-		<h:button value="hello"></h:button>
+		Nome:
+		<h:inputText id="campoNome" value="#{pessoaBean.nome}" />
+		<br />
+		Sobrenome: 
+		<h:inputText id="sobrenome" value="#{pessoaBean.sobrenome}" />
+		<br />
+		<h:outputText value="#{pessoaBean.nomeCompleto}"></h:outputText>
+		<br />
+		<h:commandButton value="Mostrar Nome"
+			action="#{pessoaBean.mostrarNome}"></h:commandButton>
 	</h:form>
 </h:body>
 </html>

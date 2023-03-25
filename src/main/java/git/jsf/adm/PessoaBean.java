@@ -7,6 +7,19 @@ public class PessoaBean {
 
     private String nome;
     private String sobrenome;
+    private String nomeCompleto;
+
+    public void mostrarNome() {
+	nomeCompleto = nome + " -- " + sobrenome;
+    }
+
+    public String getNomeCompleto() {
+	return nomeCompleto;
+    }
+
+    public void setNomeCompleto(String nomeCompleto) {
+	this.nomeCompleto = nomeCompleto;
+    }
 
     public String getNome() {
 	return nome;
