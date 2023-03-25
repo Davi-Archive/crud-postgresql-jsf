@@ -3,13 +3,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html">
 <h:head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>JSF - INDEX</title>
+	<script>
+		function alterarValorDoCampo(){
+			const campo = document.getElementById('formIndex:nome');
+			campo.value = 'eu cliquei no campo';
+		}
+	</script>
 </h:head>
 
 <h:body>
-	<h1>Olá</h1>
-	<h:form>
+	<h:form id="formIndex">
+		<h1>Olá INDEX.JSF</h1>
+		<h:inputText id="nome"></h:inputText>
+		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();"></h:commandButton>
+
+
 		<h:commandButton value="Navegar" action="primeirapagina" />
 	</h:form>
 </h:body>
