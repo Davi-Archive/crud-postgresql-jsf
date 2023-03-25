@@ -25,11 +25,13 @@ public class PessoaBean {
 
     private List<String> nomes = new ArrayList<String>();
 
-    public void addNome() {
+    public String addNome() {
 	nomes.add(nome);
 	if (nomes.size() > 3) {
 	    commandButton.setDisabled(true);
+	    return "paginanavegada";
 	}
+	return null;
     }
 
     public List<String> getNomes() {
