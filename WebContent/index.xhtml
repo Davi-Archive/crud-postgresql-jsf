@@ -16,10 +16,13 @@
 <h:body>
 	<h:form id="formIndex">
 		<h1>Olá INDEX.JSF</h1>
-		<h:inputText id="nome"></h:inputText>
+		<h:inputText id="nome" onclick="this.value='cliquei no campo'"></h:inputText>
+		<h:inputSecret id="senha" value="#{pessoaBean.senha}"></h:inputSecret>
+		<h:inputTextarea id="texto" value="#{pessoaBean.texto}"></h:inputTextarea>
+
+
 		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();"></h:commandButton>
-
-
+		<br />
 		<h:commandButton value="Navegar" action="primeirapagina" />
 	</h:form>
 </h:body>
