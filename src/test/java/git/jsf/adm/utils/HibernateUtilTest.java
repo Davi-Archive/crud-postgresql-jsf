@@ -50,5 +50,38 @@ public class HibernateUtilTest {
 
 	System.out.println(pessoa);
     }
+    
+    @Test
+    public void testeUpdate() {
+	DaoGeneric<UsuarioPessoa> daoGeneric = new DaoGeneric<UsuarioPessoa>();
+	
+	UsuarioPessoa pessoa = daoGeneric.pesquisarOutraForma(1L,
+		UsuarioPessoa.class);
+	
+	pessoa.setIdade(99);
+	pessoa.setNome("New Name");
+	
+	pessoa = daoGeneric.updateMerge(pessoa);
+	
+	System.out.println(pessoa);
+    }
+    
+    @Test
+    public void testeDelete() {
+	DaoGeneric<UsuarioPessoa> daoGeneric = new DaoGeneric<UsuarioPessoa>();
+	
+	UsuarioPessoa pessoa1 = daoGeneric.pesquisarOutraForma(6L,
+		UsuarioPessoa.class);
+	UsuarioPessoa pessoa2 = daoGeneric.pesquisarOutraForma(7L,
+		UsuarioPessoa.class);
+	UsuarioPessoa pessoa3 = daoGeneric.pesquisarOutraForma(8L,
+		UsuarioPessoa.class);
+
+	daoGeneric.deletarPorId(pessoa1);
+	daoGeneric.deletarPorId(pessoa2);
+	daoGeneric.deletarPorId(pessoa3);
+	
+	System.out.println("Deletado com sucesso");
+    }
 
 }
