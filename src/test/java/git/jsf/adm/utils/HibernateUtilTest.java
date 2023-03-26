@@ -1,5 +1,7 @@
 package git.jsf.adm.utils;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import git.jsf.adm.dao.DaoGeneric;
@@ -20,7 +22,7 @@ public class HibernateUtilTest {
 
 	pessoa.setIdade(45);
 	pessoa.setLogin("teste");
-	pessoa.setNome("Davi");
+	pessoa.setNome("Davvi");
 	pessoa.setSenha("123");
 	pessoa.setSobrenome("Olive");
 	pessoa.setEmail("email@email.com");
@@ -84,4 +86,16 @@ public class HibernateUtilTest {
 	System.out.println("Deletado com sucesso");
     }
 
+    
+    @Test
+    public void testeConsultar() {
+	DaoGeneric<UsuarioPessoa> daoGeneric = new DaoGeneric();
+	
+	List<UsuarioPessoa> list = daoGeneric.listar(UsuarioPessoa.class);
+	
+	for(UsuarioPessoa usuarioPessoa:list) {
+	    System.out.println(usuarioPessoa);
+	    System.out.println("-----------------");
+	}
+    }
 }
