@@ -4,6 +4,9 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
 	<persistence-unit name="adm">
+
+		<class>git.jsf.adm.model.UsuarioPessoa</class>
+
 		<properties>
 			<!-- Dados de conexão com banco -->
 			<property name="hibernate.connection.driver_class"
@@ -11,11 +14,13 @@
 			<property name="hibernate.connection.url"
 				value="jdbc:postgresql://localhost:5432/jsf-adm" />
 			<property name="hibernate.dialect"
-				value="org.hibernate.dialect.PostgreSQLDialect" />
+				value="org.hibernate.dialect.PostgreSQL95Dialect" />
 			<property name="hibernate.connection.username"
 				value="postgres" />
 			<property name="hibernate.connection.password" value="root" />
-			<property name="hibernate.hbm2dll.auto" value="update" />
+			<property name="hibernate.format_sql" value="true" />
+			<property name="hibernate.show.sql" value="true" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
 		</properties>
 	</persistence-unit>
 </persistence>
