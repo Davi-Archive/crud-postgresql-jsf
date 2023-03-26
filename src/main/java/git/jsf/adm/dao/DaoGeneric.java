@@ -25,4 +25,10 @@ public class DaoGeneric<E> {
 	return e;
     }
 
+    public E pesquisarOutraForma(Long id, Class<E> entidade) {
+	E e = (E) entityManager.find(entidade.getClass(), id);
+	
+	return e;
+    }
+
 }
