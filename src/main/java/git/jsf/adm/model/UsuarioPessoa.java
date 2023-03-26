@@ -17,9 +17,8 @@ public class UsuarioPessoa {
     private String email;
     private String login;
     private String senha;
+    private Integer idade;
 
-    
-    
     public UsuarioPessoa() {
 	super();
     }
@@ -81,6 +80,22 @@ public class UsuarioPessoa {
 
     public void setSenha(String senha) {
 	this.senha = senha;
+    }
+
+    public Integer getIdade() {
+	return idade;
+    }
+
+    public void setIdade(Integer idade) {
+	this.idade = idade;
+    }
+
+    @Override
+    public String toString() {
+	return "UsuarioPessoa [id=" + id + ", nome=" + nome
+		+ ", sobrenome=" + sobrenome + ", email=" + email
+		+ ", login=" + login + ", senha=" + senha + ", idade="
+		+ idade + "]";
     }
 
 }
