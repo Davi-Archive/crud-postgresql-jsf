@@ -1,9 +1,12 @@
 package git.jsf.adm.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class UsuarioPessoa {
@@ -19,6 +22,9 @@ public class UsuarioPessoa {
     private String senha;
     private Integer idade;
 
+    @OneToMany(mappedBy = "usuarioPessoa")
+    private List<TelefoneUser> telefoneUsers;
+
     public UsuarioPessoa() {
 	super();
     }
@@ -32,6 +38,14 @@ public class UsuarioPessoa {
 	this.email = email;
 	this.login = login;
 	this.senha = senha;
+    }
+
+    public List<TelefoneUser> getTelefoneUsers() {
+	return telefoneUsers;
+    }
+
+    public void setTelefoneUsers(List<TelefoneUser> telefoneUsers) {
+	this.telefoneUsers = telefoneUsers;
     }
 
     public Long getId() {

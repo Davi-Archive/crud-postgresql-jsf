@@ -5,6 +5,7 @@ import java.util.List;
 import org.junit.jupiter.api.Test;
 
 import git.jsf.adm.dao.DaoGeneric;
+import git.jsf.adm.model.TelefoneUser;
 import git.jsf.adm.model.UsuarioPessoa;
 
 public class HibernateUtilTest {
@@ -104,11 +105,33 @@ public class HibernateUtilTest {
 	DaoGeneric<UsuarioPessoa> daoGeneric = new DaoGeneric<UsuarioPessoa>();
 
 	List<UsuarioPessoa> list = daoGeneric.getEntityManager()
-		.createQuery(" from UsuarioPessoa where nome = 'Davi'").getResultList();
+		.createQuery(
+			" from UsuarioPessoa where nome = 'Davi'")
+		.getResultList();
 
 	for (UsuarioPessoa usuarioPessoa : list) {
 	    System.out.println(usuarioPessoa);
 	    System.out.println("-----------------");
 	}
+    }
+
+    @Test
+    public void testGravaTelefone() {
+	DaoGeneric daoGeneric = new DaoGeneric();
+
+	UsuarioPessoa pessoa = (UsuarioPessoa) daoGeneric
+		.pesquisarOutraForma(10l, UsuarioPessoa.class);
+
+	TelefoneUser telefoneUser = new TelefoneUser();
+
+	telefoneUser.setTipo("Celular");
+	telefoneUser.setNumero("405634032");
+	telefoneUser.setUsuarioPessoa(pessoa);
+	
+	System.out.println(pessoa);
+	
+	System.out.println(telefoneUser);
+
+	daoGeneric.salvar(telefoneUser);
     }
 }

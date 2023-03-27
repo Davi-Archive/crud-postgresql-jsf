@@ -6,6 +6,7 @@
 	<persistence-unit name="adm">
 
 		<class>git.jsf.adm.model.UsuarioPessoa</class>
+		<class>git.jsf.adm.model.TelefoneUser</class>
 
 		<properties>
 			<!-- Dados de conexão com banco -->
